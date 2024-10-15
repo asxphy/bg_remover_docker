@@ -19,7 +19,7 @@ def upload_file():
 
             output_image = remove(input_image,post_process_mask=True)
             img_io = BytesIO()
-            output_image.save(img.io,'PNG')
+            output_image.save(img_io,'PNG')
             img_io.seek(0)
 
             return send_file(img_io,mimetype='image/png',as_attachment=True,download_name='_rmbg.png')
